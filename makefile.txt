@@ -1,0 +1,15 @@
+# This is a makefile
+
+
+all:  lab3.o BinarySearchTree.o
+	g++ lab3.o BinarySearchTree.o -o BinarySearchTree
+
+lab3.o: lab3.cpp BinarySearchTree.h
+	g++ -c lab3.cpp  -o lab3.o
+	
+BinarySearchTree.o: BinarySearchTree.cpp BinaryTreeNode.h Employee.h BinarySearchTree.h
+	g++ -c BinarySearchTree.cpp -o BinarySearchTree.o
+
+clean: 
+	rm *.o
+
